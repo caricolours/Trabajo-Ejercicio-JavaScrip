@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <img class="imagenuno" src="./aset/img/PERRO.jpg" id="fotoPerro" onclick="colocarBorde()" alt="perro">
+
+    <h2>Ejercicio 2</h2>
+    <div class="cajaprincipal">
+        <div class="fotosstickers">
+            <div class="cajafoto">
+                <img src="./aset/img/stiker1.jpg" alt="stiker1">
+                <input type="number" id="numeroStickerUno" placeholder="Cantidad">
+            </div>
+            <div class="cajafoto">
+                <img src="./aset/img/stiker2.jpg" alt="stiker2">
+                <input type="number" id="numeroStickerDos" placeholder="Cantidad">
+            </div>
+            <div class="cajafoto">
+                <img src="./aset/img/stiker3.jpg" alt="stiker3">
+                <input type="number" id="numeroStickerTres" placeholder="Cantidad">
+            </div>
+        </div>
+        <p id="total"></p>
+
+        <button type="button" id="botonVerificar" onclick="calcularSuma()">Verificar</button>
+    </div>
+
+    <h2>Ejercicio 3</h2>
+    <div class="ejerciciotres">
+        <h3>Ingresar el Password</h3>
+        <p id="mensajeClave"></p>
+        <div>
+            <select name="" id="digitoUno">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <select name="" id="digitoDos">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <select name="" id="digitoTres">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </div>
+        <button type="button" id="botonIngresar" onclick="verificarPass()">Ingresar</button>
+    </div>
+
+    <script>
+        function verificarPass() {
+            var selectUno = document.querySelector( '#digitoUno');
+            var selectDos = document.querySelector( '#digitoDos');
+            var selectTres = document.querySelector( '#digitoTres');
+            var mensajeClave = document.querySelector('#mensajeClave');
+
+            var password = selectUno.value + selectDos.value + selectTres.value;
+
+
+            if (password == '911') {
+                mensajeClave.innerHTML = 'Clave 1 Correcta';
+            }else if (password == '714') {
+                mensajeClave.innerHTML = 'Clave 2 Correcta';
+            }else {
+                mensajeClave.innerHTML = 'Clave Incorrecta';
+            }
+        }
+
+        function calcularSuma() {
+            var inputNumeroStickerUno = document.querySelector('#numeroStickerUno');
+            var inputNumeroStickerDos = document.querySelector('#numeroStickerDos');
+            var inputNumeroStickerTres = document.querySelector('#numeroStickerTres');
+            var mensajeAlerta = document.querySelector('#total');
+
+
+            var total = (Number(inputNumeroStickerUno.value) + Number(inputNumeroStickerDos.value) + Number(inputNumeroStickerTres.value));
+
+
+            if (total > 10) {
+                mensajeAlerta.innerHTML = 'Llevas demasiados Stiker';
+            
+
+            }else {
+                mensajeAlerta.innerHTML = 'Llevas ' + total + ' Stikers';
+            }
+        }
+
+        function colocarBorde() {
+            var bordePerro = document.querySelector('#fotoPerro');
+
+            if (bordePerro.style.border == '') {
+                bordePerro.style.border = '2px solid red';
+
+
+            } else {
+                bordePerro.style.border = '';
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

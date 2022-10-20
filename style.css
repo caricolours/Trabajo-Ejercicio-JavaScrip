@@ -1,0 +1,37 @@
+.imagenuno {
+  height: 250px;
+}
+
+.cajaprincipal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cajaprincipal button {
+  margin: 40px;
+}
+
+.fotosstickers {
+  display: flex;
+  flex-direction: row;
+}
+.fotosstickers .cajafoto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fotosstickers img {
+  height: 400px;
+}
+
+.ejerciciotres {
+  width: 250px;
+  height: 300px;
+  margin-bottom: 50px;
+  background-color: rgb(141, 222, 240);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}/*# sourceMappingURL=style.css.map */
